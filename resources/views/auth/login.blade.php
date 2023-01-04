@@ -8,7 +8,8 @@
             <img src="{{ asset('img/login.svg') }}" alt="Join Us">
         </div>
 
-        <form action="{{ route('login') }}" method="POST" class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl" novalidate>
+        <form action="{{ route('login.store') }}" method="POST" class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl"
+            novalidate>
             @csrf
 
             <h1 class="text-3xl font-bold text-center mb-5">Log in</h1>

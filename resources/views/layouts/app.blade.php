@@ -33,7 +33,7 @@
                     </a>
                     <a class="font-bold text-gray-600 text-sm"
                         href="{{ route('posts.index', auth()->user()->slug) }}">Profile</a>
-                    <form action="{{ route('logout') }}" method="POST">
+                    <form action="{{ route('login.destroy') }}" method="POST">
                         @csrf
                         <button class="font-bold text-gray-600 text-sm" type="submit">Logout</button>
                     </form>
@@ -42,8 +42,8 @@
 
             @guest
                 <nav class="flex gap-2 items-center">
-                    <a class="font-bold text-gray-600 text-sm" href="{{ route('login') }}">Login</a>
-                    <a class="font-bold text-gray-600 text-sm" href="{{ route('register') }}">Register</a>
+                    <a class="font-bold text-gray-600 text-sm" href="{{ route('login.index') }}">Login</a>
+                    <a class="font-bold text-gray-600 text-sm" href="{{ route('register.index') }}">Register</a>
                 </nav>
             @endguest
         </div>

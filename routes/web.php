@@ -24,11 +24,11 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class)->name('home')->middleware('auth');
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store'])->name('login');
-Route::post('/logout', [LoginController::class, 'destroy'])->name('logout')->middleware('auth');
+Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+Route::post('/logout', [LoginController::class, 'destroy'])->name('login.destroy')->middleware('auth');
 
 Route::get('/{user:slug}', [PostController::class, 'index'])->name('posts.index');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store')->middleware('auth');
